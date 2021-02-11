@@ -1,0 +1,6 @@
+version: '3'
+services:
+  prj_a:
+    image: nginx
+    volumes:
+      - ${PWD}:/usr/share/nginx/html
