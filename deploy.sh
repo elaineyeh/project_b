@@ -18,3 +18,4 @@ done
 FILE+=" up -d"
 echo $FILE
 echo $FILE > run.sh
+sh run.sh

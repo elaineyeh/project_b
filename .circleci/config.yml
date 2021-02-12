@@ -14,7 +14,5 @@ jobs:
 
       - run: echo "hello world" # run the `echo` command
       - run: echo $CIRCLE_PROJECT_REPONAME
-      - run: echo $CIRCLE_PROJECT_REPONAME >> sshenv
-      - run: scp -o StrictHostKeyChecking=no sshenv $USER@$HOST:~/.ssh/environment
-      # - run: envsubst '${CIRCLE_PROJECT_REPONAME}' < deploy.sh > real_deploy.sh
-      - run: ssh -o StrictHostKeyChecking=no $USER@$HOST < deploy.sh
+      - run: envsubst '${CIRCLE_PROJECT_REPONAME}' < deploy.sh > real_deploy.sh
+      - run: ssh -o StrictHostKeyChecking=no $USER@$HOST < real_deploy.sh
